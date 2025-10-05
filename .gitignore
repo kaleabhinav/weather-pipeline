@@ -1,0 +1,9 @@
+venv/
+__pychache__/
+*.pyc
+
+logs/
+
+pgdata/
+
+.vscode/
