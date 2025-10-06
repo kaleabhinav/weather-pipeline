@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 logging.basicConfig(
-    filename= 'logs/ingest.log',
+    filename= 'logs/test_ingest.log',
     level = logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -24,7 +24,12 @@ try:
     )
 
     cur = conn.cursor()
+    
 
+    cur.execute("""
+    ALTER TABLE raw_weather
+    ADD COLUMN IF NOT EXISTS timestamp TIMESTAMP DEFAULT NOW();
+""")
     for row in data:
         cur.execute(
             """

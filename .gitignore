@@ -7,3 +7,5 @@ logs/
 pgdata/
 
 .vscode/
+
+sample_data/
