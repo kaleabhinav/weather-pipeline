@@ -34,7 +34,7 @@ try:
 (row['city'], row['temperature'], row['humidity'],datetime.now()))
         
         conn.commit()
-        logging.info("CSV data ingested successfully!")
+    logging.info("CSV data ingested successfully!")
 
 except Exception as e:
     logging.error(f"Error Ingesting date from file: {e}")

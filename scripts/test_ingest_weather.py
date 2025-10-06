@@ -12,7 +12,7 @@ logging.basicConfig(
 data = [
     {"city" : "New York", "temperature": 22.5, "humidity":55},
     {"city":"London", "temperature":18.3, "humidity": 65},
-    {"city":"Toyko", "temperature": 25.0,"humidity":70}
+    {"city":"Tokyo", "temperature": 25.0,"humidity":70}
 ]
 
 try:
@@ -24,12 +24,6 @@ try:
     )
 
     cur = conn.cursor()
-    
-
-    cur.execute("""
-    ALTER TABLE raw_weather
-    ADD COLUMN IF NOT EXISTS timestamp TIMESTAMP DEFAULT NOW();
-""")
     for row in data:
         cur.execute(
             """
